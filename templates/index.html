@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Update Profile{% end block %}
+
+{% block content %}
+<h1>Update Profile</h1>
+<form id="profileForm">
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullname" required><br>
+
+    <label for="surname">Surname:</label>
+    <input type="text" id="surname" name="surname" required><br>
+
+    <label for="id_number">Id Number:</label>
+    <input type="number" id="id_number" name="id_number" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <button type="submit">Update Profile</button>
+</form>
+
+<p id="message"></p>
+
+<script>
+    // Function to update the user profile
+    function updateProfile(username, email, fullname, password, dob, gender, address, phone) {
+        // Perform necessary actions to update the profile
+        console.log("Updating profile...");
+        console.log("Username:", username);
+        console.log("Email:", email);
+        console.log("Name:", fullname);
+        console.log("Password:", password);
+        console.log("Date of Birth:", dob);
+        console.log("Gender:", gender);
+        console.log("Address:", address);
+        console.log("Phone Number:", phone);
+
+        // Add your code here to actually update the profile
+        // For demonstration purposes, logging a success message
+        document.getElementById('message').innerText = 'Profile updated successfully!';
+    }
+
+    // Event listener for form submission
+    document.getElementById('profileForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Get form data
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const fullname = document.getElementById('fullname').value;
+        const password = document.getElementById('password').value;
+        const dob = document.getElementById('dob').value;
+        const gender = document.getElementById('gender').value;
+        const address = document.getElementById('address').value;
+        const phone = document.getElementById('phone').value;
+
+        // Update profile
+        updateProfile(username, email, fullname, password, dob, gender, address, phone);
+    });
+</script>
+{% end block %}
